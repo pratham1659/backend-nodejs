@@ -1,3 +1,4 @@
+//using traditional exports
 exports.sum = (a, b) => {
   return a + b;
 };
@@ -12,6 +13,8 @@ console.log(lib);
 console.log(lib.sum(4, 5));
 
 console.log(lib.diff(2 - 2));
+
+//using ecma script exports
 
 import { sum, diff } from "./lib.js";
 
@@ -29,8 +32,12 @@ console.log(diff(3, 6));
 // const txt = fs.readFileSync("demo.txt", "utf-8");
 
 const t1 = performance.now(); // This is Async
-
-fs.readFile("demo.txt", "utf-8", (err, txt) => {
+// Adjust the path to include the 'config' folder
+fs.readFile("./temp/read.txt", "utf-8", (err, txt) => {
+  if (err) {
+    console.error("Error reading the file:", err);
+    return;
+  }
   console.log(txt);
 });
 
