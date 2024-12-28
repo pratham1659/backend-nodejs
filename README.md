@@ -51,24 +51,31 @@ import { sum } from "./lib.js";
 npm install nodemon
 ```
 
-- `scripts` inside **package.json** can be used like `npm run <script-name>` e.g `npm run dev`. Only for `npm start` you can avoid `run`.
+- `scripts` inside **package.json** can be used like `npm run <script-name>` e.g `npm run start`, `npm run dev`. Only for `npm start` you can avoid `run`.
 
 ```
 //package.json file
 "scripts": {
-    "start": "nodemon index.js",
+    "start": "node index.js",
+    "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
 ```
 
 - use `npm install -g <package.json>` to install packages globally on your system. Not just in the project but useful all over your system.
 
-- Node versions are formatted like **4.1.9** where these are `major.minor.patch` versions.
+- Node versions are formatted like **^22.12.0** where these are `major.minor.patch` versions.
+
+- `*` This can be used to change the `major` version
+- `^` This can be used to change the `minor` version
+- `~` This can be used to change the `patch` version only.
+
 - you can install all dependencies again using `npm install` again
 - **package-lock.json** has exact versions installed and link of dependencies of each package.
 - use `npm update` to update packages safely. `npm outdated` shows outdated and latets versions of packages installed in your **package.json**
 - use `npm uninstall <package-name>` to uninstall packages from `package.json`
 - `node_modules` should not be shared - you can make `.gitignore`to ignore them to be uploaded.
+- `npm outdated` can used to check the outdated packages
 
 ### [Assignments ]
 
