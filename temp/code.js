@@ -45,3 +45,10 @@ console.log(lib.sum(4, 5));
 const t2 = performance.now();
 
 console.log(t2 - t1);
+
+//server build
+const express = require("express");
+
+console.log("hello world!");
+const server = express();
+server.listen(8080);

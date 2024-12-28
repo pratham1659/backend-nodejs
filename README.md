@@ -84,3 +84,11 @@ npm install nodemon
 - **Assignment 3** : Explore the `os` module in Node Js from their documentation. What all info you can access from it about your operating system ?
 - **Assignment 4** : Explore about **Asynchronous** nature of JS as a single threaded language and how it is achieved using **Event Loop**. Video are given below in related videos sections.
 - **Assignment 5 [Challenge]** : Can you run a system command from Node JS javascript file e.g. `ls` `dir` commands ? and can you store its output in a text file ?
+
+### Related Links/Videos
+
+1. [Callbacks](https://youtu.be/rx-y7U4x4wc)
+2. [Promises](https://youtu.be/aA4-VNZK2s0)
+3. [Async Await](https://youtu.be/rdy8ZV0LXV0)
+4. [Import/ Export example](https://youtu.be/7P5JUMc1cI4)
+5. [Event Loop in Node JS](https://youtu.be/W-HQC_YUGBY)
