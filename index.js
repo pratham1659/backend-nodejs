@@ -1,51 +1,64 @@
-const http = require("http");
 const fs = require("fs");
-
-const data = { age: 5 };
 const readHtml = fs.readFileSync("./temp/index.html", "utf-8");
 const readData = JSON.parse(fs.readFileSync("./temp/data.json"));
+const express = require("express");
+const morgan = require("morgan");
+const { type, hostname } = require("os");
 
-const products = readData.products;
+const server = express();
 
-const server = http.createServer((req, res) => {
-  console.log(req.url, req.method);
+//bodyParser
+server.use(express.json()); //json middleware for body
 
-  if (req.url.startsWith("/product")) {
-    const id = req.url.split("/")[2];
-    const product = products.find((p) => p.id === +id);
+server.use(morgan("default"));
 
-    console.log(product);
+// server.use(express.urlencoded()) // url middleware for body
 
-    res.setHeader("Content-Type", "text/html");
-    let replaceHtml = readHtml
-      .replace("**title**", product.title)
-      .replace("**price**", product.price)
-      .replace("**category**", product.category)
-      .replace("**rating**", product.rating)
-      .replace("**brand**", product.brand)
-      .replace("**discountPercentage**", product.discountPercentage)
-      .replace("**stock**", product.stock)
-      .replace("**sku**", product.sku);
+server.use(express.static("temp")); //path middleware to get the files
 
-    res.end(replaceHtml);
-    return;
+// server.use((req, res, next) => {
+//   console.log(req.get("User-Agent"), req.method, req.ip, req.hostname);
+//   next();
+// });
+
+const auth = (req, res, next) => {
+  console.log(req.query);
+
+  if (req.body.password == "123") {
+    next();
+  } else {
+    res.sendStatus(401);
   }
+};
 
-  switch (req.url) {
-    case "/":
-      res.setHeader("content-Type", "text/html");
-      res.end(readHtml);
-      break;
-    case "/api":
-      res.setHeader("Content-Type", "application/json");
-      res.end(JSON.stringify(data));
-      break;
-    default:
-      res.writeHead(404, "Not Found");
-      res.end();
-  }
-
-  console.log("Server Started");
+// API - EndPoint - Route
+server.get("/", auth, (req, res) => {
+  // res.send("hello");
+  // res.json(readData);
+  // res.sendStatus(404);
+  res.status(201).send("GET1");
 });
 
-server.listen(8080);
+server.get("/", (req, res) => {
+  res.status(201).send("GET2");
+});
+
+server.post("/", (req, res) => {
+  res.json({ type: "POST" });
+});
+
+server.put("/", (req, res) => {
+  res.json({ type: "PUT" });
+});
+
+server.delete("/", (req, res) => {
+  res.json({ type: "DELETE" });
+});
+
+server.patch("/", (req, res) => {
+  res.json({ type: "PATCH" });
+});
+
+server.listen(8080, () => {
+  console.log("Server Started");
+});
