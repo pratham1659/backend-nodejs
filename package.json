@@ -1,7 +1,7 @@
 {
   "name": "backend-nodejs",
   "version": "1.0.0",
-  "description": "## Chapter 1 - Introduction to Node, NPM, Package.JSON",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
