@@ -1,87 +1,4 @@
 {
-  "products": [
-    {
-      "id": 1,
-      "name": "Wireless Headphones",
-      "category": "Electronics",
-      "price": 99.99,
-      "stock": 50,
-      "rating": 4.5
-    },
-    {
-      "id": 2,
-      "name": "Smartphone",
-      "category": "Electronics",
-      "price": 699.99,
-      "stock": 30,
-      "rating": 4.7
-    },
-    {
-      "id": 3,
-      "name": "Gaming Mouse",
-      "category": "Accessories",
-      "price": 49.99,
-      "stock": 100,
-      "rating": 4.4
-    },
-    {
-      "id": 4,
-      "name": "Desk Lamp",
-      "category": "Home",
-      "price": 29.99,
-      "stock": 70,
-      "rating": 4.2
-    },
-    {
-      "id": 5,
-      "name": "Backpack",
-      "category": "Fashion",
-      "price": 39.99,
-      "stock": 200,
-      "rating": 4.6
-    },
-    {
-      "id": 6,
-      "name": "Running Shoes",
-      "category": "Footwear",
-      "price": 59.99,
-      "stock": 150,
-      "rating": 4.8
-    },
-    {
-      "id": 7,
-      "name": "Yoga Mat",
-      "category": "Fitness",
-      "price": 19.99,
-      "stock": 90,
-      "rating": 4.3
-    },
-    {
-      "id": 8,
-      "name": "Cookware Set",
-      "category": "Kitchen",
-      "price": 79.99,
-      "stock": 40,
-      "rating": 4.5
-    },
-    {
-      "id": 9,
-      "name": "Bluetooth Speaker",
-      "category": "Electronics",
-      "price": 49.99,
-      "stock": 60,
-      "rating": 4.6
-    },
-    {
-      "id": 10,
-      "name": "Office Chair",
-      "category": "Furniture",
-      "price": 129.99,
-      "stock": 20,
-      "rating": 4.7
-    }
-  ],
-
   "users": [
     {
       "id": 1,
@@ -178,83 +95,103 @@
   "books": [
     {
       "id": 1,
-      "name": "The Great Gatsby",
+      "title": "The Silent Forest",
+      "author": "Laura Whitman",
       "category": "Fiction",
-      "price": 10.99,
-      "stock": 120,
-      "rating": 4.7
+      "price": 9.99,
+      "stock": 100,
+      "rating": 4.6,
+      "genres": ["Mystery", "Drama"]
     },
     {
       "id": 2,
-      "name": "To Kill a Mockingbird",
-      "category": "Classic",
-      "price": 7.99,
-      "stock": 80,
-      "rating": 4.8
+      "title": "Beneath the Crimson Sky",
+      "author": "Thomas Grant",
+      "category": "Historical Fiction",
+      "price": 12.49,
+      "stock": 75,
+      "rating": 4.8,
+      "genres": ["Historical", "Adventure"]
     },
     {
       "id": 3,
-      "name": "1984",
-      "category": "Dystopian",
-      "price": 9.99,
-      "stock": 50,
-      "rating": 4.6
+      "title": "Shadows of Eternity",
+      "author": "Catherine Blake",
+      "category": "Fantasy",
+      "price": 15.99,
+      "stock": 60,
+      "rating": 4.7,
+      "genres": ["Fantasy", "Action"]
     },
     {
       "id": 4,
-      "name": "Pride and Prejudice",
-      "category": "Romance",
-      "price": 6.99,
-      "stock": 150,
-      "rating": 4.5
+      "title": "Echoes of the Past",
+      "author": "Evan Carter",
+      "category": "Classic",
+      "price": 7.99,
+      "stock": 90,
+      "rating": 4.5,
+      "genres": ["Classic", "Historical"]
     },
     {
       "id": 5,
-      "name": "The Catcher in the Rye",
-      "category": "Classic",
-      "price": 8.99,
-      "stock": 70,
-      "rating": 4.4
+      "title": "The Last Voyage",
+      "author": "Sophia Reed",
+      "category": "Adventure",
+      "price": 11.99,
+      "stock": 120,
+      "rating": 4.4,
+      "genres": ["Adventure", "Thriller"]
     },
     {
       "id": 6,
-      "name": "The Hobbit",
-      "category": "Fantasy",
-      "price": 12.99,
-      "stock": 90,
-      "rating": 4.9
+      "title": "Whispers of the Heart",
+      "author": "Amelia Dawson",
+      "category": "Romance",
+      "price": 8.99,
+      "stock": 140,
+      "rating": 4.6,
+      "genres": ["Romance", "Drama"]
     },
     {
       "id": 7,
-      "name": "Harry Potter and the Sorcerer's Stone",
-      "category": "Fantasy",
-      "price": 14.99,
-      "stock": 200,
-      "rating": 4.8
+      "title": "The Forgotten Kingdom",
+      "author": "Liam Harper",
+      "category": "Dystopian",
+      "price": 10.99,
+      "stock": 50,
+      "rating": 4.3,
+      "genres": ["Dystopian", "Science Fiction"]
     },
     {
       "id": 8,
-      "name": "The Alchemist",
-      "category": "Philosophy",
-      "price": 11.99,
-      "stock": 60,
-      "rating": 4.7
+      "title": "Threads of Fate",
+      "author": "Emily Hayes",
+      "category": "Fantasy",
+      "price": 13.49,
+      "stock": 80,
+      "rating": 4.9,
+      "genres": ["Fantasy", "Romance"]
     },
     {
       "id": 9,
-      "name": "The Book Thief",
-      "category": "Historical Fiction",
-      "price": 13.99,
-      "stock": 40,
-      "rating": 4.8
+      "title": "The Celestial Codex",
+      "author": "Oliver Bennett",
+      "category": "Science Fiction",
+      "price": 14.99,
+      "stock": 45,
+      "rating": 4.7,
+      "genres": ["Science Fiction", "Adventure"]
     },
     {
       "id": 10,
-      "name": "Moby-Dick",
-      "category": "Adventure",
-      "price": 15.99,
-      "stock": 25,
-      "rating": 4.3
+      "title": "Fragments of Tomorrow",
+      "author": "Charlotte Brooks",
+      "category": "Philosophy",
+      "price": 16.99,
+      "stock": 30,
+      "rating": 4.8,
+      "genres": ["Philosophy", "Inspiration"]
     }
   ]
 }
