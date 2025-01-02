@@ -1,0 +1,4 @@
+{"level":"info","message":"POST /books","service":"book-service","timestamp":"2025-01-02 02:43:36"}
+{"error":"E11000 duplicate key error collection: bookly_db.books index: title_1 dup key: { title: \"The Lasd Voyagse\" }","level":"error","message":"Error creating book","service":"book-service","timestamp":"2025-01-02 02:43:36"}
+{"level":"info","message":"POST /books","service":"book-service","timestamp":"2025-01-02 02:44:11"}
+{"error":"E11000 duplicate key error collection: bookly_db.books index: title_1 dup key: { title: \"The Lasd Voyagse\" }","level":"error","message":"Error creating book","service":"book-service","timestamp":"2025-01-02 02:44:11"}
