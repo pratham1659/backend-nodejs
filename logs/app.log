@@ -572,3 +572,15 @@
 [2025-01-03T20:40:05.395Z] INFO: DELETE /books - Book deleted successfully
 [2025-01-03T20:40:35.100Z] INFO: GET /books - Book created successfully
 [2025-01-03T20:40:36.127Z] INFO: GET /books - Books fetched successfully
+[2025-01-03T21:14:25.636Z] ERROR: Failed to connect to the database:
+[2025-01-03T21:14:54.838Z] ERROR: Failed to connect to the database:
+[2025-01-03T21:16:15.580Z] ERROR: Failed to connect to the database:
+[2025-01-03T21:23:09.942Z] ERROR: Failed to connect to the database:
+[2025-01-03T21:23:11.492Z] ERROR: Failed to connect to the database:
+[2025-01-03T21:43:05.516Z] INFO: GET /books - Books fetched successfully
+[2025-01-03T21:43:25.516Z] INFO: GET /books/67785490a56f06fa35c4a51a - Book fetched successfully
+[2025-01-03T21:43:28.141Z] INFO: PATCH /books - Book patched successfully
+[2025-01-03T21:43:29.214Z] INFO: GET /books - Books fetched successfully
+[2025-01-03T21:43:43.171Z] INFO: GET /books - Book created successfully
+[2025-01-03T21:43:44.236Z] INFO: GET /books - Books fetched successfully
+[2025-01-03T21:43:49.108Z] INFO: DELETE /books - Book deleted successfully
