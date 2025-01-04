@@ -1044,3 +1044,54 @@ Queries in Mongoose : [Link](https://mongoosejs.com/docs/queries.html)
 
 1. [Heroku Deployment Video](https://www.youtube.com/watch?v=GeXA_MzMR6I)
 2. [Git Crash Course](https://youtu.be/kviiFelh28g)
+
+## Chapter 10 - Server Side Rendering
+
+### [[Chapter Notes]]
+
+Server side rendering is done using many templating languages
+
+- EJS
+- Pug
+- Handlebars
+
+We have used EJS which is one of the most popular one.
+
+Install
+`npm install ejs`
+
+- Control flow with `<% %>`
+- Escaped output with `<%= %>` (escape function configurable)
+
+```pug
+<% if (product) { %>
+ <h2><%= product.title %></h2>
+<% } %>
+```
+
+For passing variable to template engine and render a new page :
+
+```javascript
+const ejs = require("ejs");
+
+ejs.renderFile(path.resolve(__dirname, "../pages/index.ejs"), { products: products }, function (err, str) {
+  res.send(str); // this is the rendered HTML
+});
+```
+
+### How to send HTML FORM data to Express
+
+- You need to have input boxes have proper `name` which will be used as `key` to objects sent to backend. Mostly in form like `name=value`
+- use **action** or for API destination
+  `action="/products"`
+- use **method** or for API type
+  `method="POST"`
+- use **enctype** with value `application/x-form-urlencoded`
+
+### [[Assignments]]
+
+- **Assignment 1** : Create Server rendered page for `quotes` collection created in 1 of previous assignment. Use a very simple HTML template to display each quote in a list format. You can use other render method of EJS for this task. (**not renderFile**)
+
+### Related Links/Videos
+
+1. [DOM Series](https://bit.ly/35nMKB7)
