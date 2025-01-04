@@ -16,6 +16,8 @@
 
 [Chapter 8 - Deploy Live](#Chapter-8-Notes)
 
+[Chapter 9 - Server Side Rendering](#Chapter-9-Notes)
+
 ## Chapter 1 - Introduction to Node, NPM, Package.JSON
 
 ### [Chapter 1 Notes]
@@ -1045,9 +1047,9 @@ Queries in Mongoose : [Link](https://mongoosejs.com/docs/queries.html)
 1. [Heroku Deployment Video](https://www.youtube.com/watch?v=GeXA_MzMR6I)
 2. [Git Crash Course](https://youtu.be/kviiFelh28g)
 
-## Chapter 10 - Server Side Rendering
+## Chapter 9 - Server Side Rendering
 
-### [[Chapter Notes]]
+### [[Chapter-9-Notes]]
 
 Server side rendering is done using many templating languages
 
