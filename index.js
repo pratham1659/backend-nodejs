@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const express = require("express");
 const cors = require("cors");
-const run = require("./config/dbConfig");
+const dbConnect = require("./config/dbConfig");
 const bookRouter = require("./routes/book");
 const userRouter = require("./routes/user");
 const path = require("path");
@@ -10,9 +10,9 @@ const logger = require("./middlewares/logger");
 require("dotenv").config();
 
 //db connect
-run().catch((err) => {
+dbConnect().catch((err) => {
   logger.error("Unexpected error occurred in the main function:", err.message || err);
-  process.exit(1);
+  process.exit(1); // Exit the process with a failure code
 });
 
 // bodyParser - middleware

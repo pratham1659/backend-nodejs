@@ -584,3 +584,53 @@
 [2025-01-03T21:43:43.171Z] INFO: GET /books - Book created successfully
 [2025-01-03T21:43:44.236Z] INFO: GET /books - Books fetched successfully
 [2025-01-03T21:43:49.108Z] INFO: DELETE /books - Book deleted successfully
+[2025-01-04T08:34:04.562Z] ERROR: Error fetching books: Operation `books.find()` buffering timed out after 10000ms
+[2025-01-04T08:34:14.573Z] ERROR: Error fetching books: Operation `books.find()` buffering timed out after 10000ms
+[2025-01-04T08:34:24.580Z] ERROR: Error fetching books: Operation `books.find()` buffering timed out after 10000ms
+[2025-01-04T08:34:30.929Z] ERROR: Error fetching books: Operation `books.find()` buffering timed out after 10000ms
+[2025-01-04T08:34:40.194Z] ERROR: Error fetching books: Operation `books.find()` buffering timed out after 10000ms
+[2025-01-04T08:49:19.548Z] ERROR: Error fetching books: Operation `books.find()` buffering timed out after 10000ms
+[2025-01-04T08:49:45.934Z] ERROR: Error fetching books: Operation `books.find()` buffering timed out after 10000ms
+[2025-01-04T08:52:49.969Z] ERROR: Error fetching books: Operation `books.find()` buffering timed out after 10000ms
+[2025-01-04T08:52:59.985Z] ERROR: Error fetching books: Operation `books.find()` buffering timed out after 10000ms
+[2025-01-04T08:53:09.996Z] ERROR: Error fetching books: Operation `books.find()` buffering timed out after 10000ms
+[2025-01-04T08:53:20.007Z] ERROR: Error fetching books: Operation `books.find()` buffering timed out after 10000ms
+[2025-01-04T08:53:46.092Z] ERROR: Error fetching books: Operation `books.find()` buffering timed out after 10000ms
+[2025-01-04T08:58:49.439Z] ERROR: Error fetching books: Operation `books.find()` buffering timed out after 10000ms
+[2025-01-04T08:59:24.935Z] ERROR: Error in creating book: Operation `books.insertOne()` buffering timed out after 10000ms
+[2025-01-04T08:59:26.573Z] ERROR: Error in creating book: Operation `books.insertOne()` buffering timed out after 10000ms
+[2025-01-04T09:02:35.061Z] ERROR: Error fetching books: Operation `books.find()` buffering timed out after 10000ms
+[2025-01-04T09:03:01.888Z] ERROR: Error fetching books: Operation `books.find()` buffering timed out after 10000ms
+[2025-01-04T09:03:16.892Z] WARN: Invalid ID format: 6775aee5a980683d4d980de
+[2025-01-04T09:03:35.552Z] ERROR: Error fetching books: Operation `books.find()` buffering timed out after 10000ms
+[2025-01-04T09:04:56.605Z] INFO: GET /books - Books fetched successfully
+[2025-01-04T09:05:12.851Z] INFO: GET /books - Books fetched successfully
+[2025-01-04T09:05:24.774Z] INFO: GET /books - Books fetched successfully
+[2025-01-04T09:05:29.406Z] INFO: GET /books - Books fetched successfully
+[2025-01-04T09:05:39.152Z] INFO: GET /books - Books fetched successfully
+[2025-01-04T09:08:52.266Z] INFO: GET /books - Books fetched successfully
+[2025-01-04T09:08:53.843Z] INFO: GET /books - Books fetched successfully
+[2025-01-04T09:08:56.205Z] INFO: GET /books - Books fetched successfully
+[2025-01-04T09:08:59.828Z] INFO: GET /books/67784b4389004e4c3fcf7f67 - Book fetched successfully
+[2025-01-04T09:09:02.256Z] INFO: PATCH /books - Book patched successfully
+[2025-01-04T09:09:03.292Z] INFO: GET /books - Books fetched successfully
+[2025-01-04T09:09:06.389Z] INFO: GET /books/67784b4389004e4c3fcf7f67 - Book fetched successfully
+[2025-01-04T09:09:16.180Z] INFO: PATCH /books - Book patched successfully
+[2025-01-04T09:09:17.212Z] INFO: GET /books - Books fetched successfully
+[2025-01-04T09:10:44.766Z] INFO: GET /books - Books fetched successfully
+[2025-01-04T09:10:58.934Z] INFO: GET /books - Book created successfully
+[2025-01-04T09:10:59.965Z] INFO: GET /books - Books fetched successfully
+[2025-01-04T09:11:07.917Z] INFO: DELETE /books - Book deleted successfully
+[2025-01-04T09:11:33.118Z] INFO: GET /books - Books fetched successfully
+[2025-01-04T09:11:37.173Z] INFO: GET /books - Books fetched successfully
+[2025-01-04T09:11:38.391Z] INFO: GET /books - Books fetched successfully
+[2025-01-04T09:18:39.861Z] INFO: GET /books - Books fetched successfully
+[2025-01-04T09:18:39.905Z] INFO: GET /books - Books fetched successfully
+[2025-01-04T09:20:24.596Z] INFO: GET /books - Books fetched successfully
+[2025-01-04T09:20:26.377Z] INFO: GET /books - Books fetched successfully
+[2025-01-04T09:20:38.020Z] INFO: GET /books - Book created successfully
+[2025-01-04T09:20:39.079Z] INFO: GET /books - Books fetched successfully
+[2025-01-04T09:20:42.262Z] INFO: GET /books/6778fd65bf40152a1cef3ef7 - Book fetched successfully
+[2025-01-04T09:20:52.463Z] INFO: PATCH /books - Book patched successfully
+[2025-01-04T09:20:53.528Z] INFO: GET /books - Books fetched successfully
+[2025-01-04T09:20:58.606Z] INFO: GET /books - Books fetched successfully

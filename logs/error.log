@@ -15,3 +15,21 @@
 [2025-01-03T21:16:15.582Z] ERROR: Failed to connect to the database:
 [2025-01-03T21:23:09.949Z] ERROR: Failed to connect to the database:
 [2025-01-03T21:23:11.492Z] ERROR: Failed to connect to the database:
+[2025-01-04T08:34:04.563Z] ERROR: Error fetching books: Operation `books.find()` buffering timed out after 10000ms
+[2025-01-04T08:34:14.573Z] ERROR: Error fetching books: Operation `books.find()` buffering timed out after 10000ms
+[2025-01-04T08:34:24.580Z] ERROR: Error fetching books: Operation `books.find()` buffering timed out after 10000ms
+[2025-01-04T08:34:30.930Z] ERROR: Error fetching books: Operation `books.find()` buffering timed out after 10000ms
+[2025-01-04T08:34:40.195Z] ERROR: Error fetching books: Operation `books.find()` buffering timed out after 10000ms
+[2025-01-04T08:49:19.549Z] ERROR: Error fetching books: Operation `books.find()` buffering timed out after 10000ms
+[2025-01-04T08:49:45.935Z] ERROR: Error fetching books: Operation `books.find()` buffering timed out after 10000ms
+[2025-01-04T08:52:49.974Z] ERROR: Error fetching books: Operation `books.find()` buffering timed out after 10000ms
+[2025-01-04T08:52:59.986Z] ERROR: Error fetching books: Operation `books.find()` buffering timed out after 10000ms
+[2025-01-04T08:53:09.997Z] ERROR: Error fetching books: Operation `books.find()` buffering timed out after 10000ms
+[2025-01-04T08:53:20.007Z] ERROR: Error fetching books: Operation `books.find()` buffering timed out after 10000ms
+[2025-01-04T08:53:46.094Z] ERROR: Error fetching books: Operation `books.find()` buffering timed out after 10000ms
+[2025-01-04T08:58:49.440Z] ERROR: Error fetching books: Operation `books.find()` buffering timed out after 10000ms
+[2025-01-04T08:59:24.935Z] ERROR: Error in creating book: Operation `books.insertOne()` buffering timed out after 10000ms
+[2025-01-04T08:59:26.574Z] ERROR: Error in creating book: Operation `books.insertOne()` buffering timed out after 10000ms
+[2025-01-04T09:02:35.063Z] ERROR: Error fetching books: Operation `books.find()` buffering timed out after 10000ms
+[2025-01-04T09:03:01.889Z] ERROR: Error fetching books: Operation `books.find()` buffering timed out after 10000ms
+[2025-01-04T09:03:35.553Z] ERROR: Error fetching books: Operation `books.find()` buffering timed out after 10000ms
