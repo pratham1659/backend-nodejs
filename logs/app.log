@@ -1,0 +1,4 @@
+[2025-01-04T11:56:48.625Z] INFO: GET /books - Books fetched successfully
+[2025-01-04T11:57:15.570Z] INFO: GET /books - Books fetched successfully
+[2025-01-04T11:57:39.044Z] INFO: GET /books - Books fetched successfully
+[2025-01-04T11:57:41.138Z] INFO: GET /books/6778547fa56f06fa35c4a519 - Book fetched successfully

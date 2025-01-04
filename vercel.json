@@ -22,7 +22,18 @@
       "src": "/",
       "dest": "build/index.html"
     },
-
+    {
+      "src": "/booklist",
+      "dest": "build/index.html"
+    },
+    {
+      "src": "/add-book",
+      "dest": "build/index.html"
+    },
+    {
+      "src": "/edit-book/**",
+      "dest": "build/index.html"
+    },
     {
       "src": "/(.+)",
       "dest": "build/$1"
