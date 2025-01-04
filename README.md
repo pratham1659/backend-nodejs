@@ -14,6 +14,8 @@
 
 [Chapter 7 - Mongoose and REST APIs](#Chapter-7-Notes)
 
+[Chapter 8 - Deploy Live](#Chapter-8-Notes)
+
 ## Chapter 1 - Introduction to Node, NPM, Package.JSON
 
 ### [Chapter 1 Notes]
@@ -1014,3 +1016,31 @@ Now try to create this **user** object and **save** it to database.
 ### Related Links/Videos
 
 Queries in Mongoose : [Link](https://mongoosejs.com/docs/queries.html)
+
+## Chapter 8 - Deploy Live
+
+### [[Chapter-8-Notes]]
+
+**Preparation for deployment**
+
+- First check whether front-end routes are independent of server, and make all of them relative to `/`
+- Connect MongoDB atlas - in-place of mongo local database
+
+### How to Deploy to Vercel :
+
+- Commit you code on a github account (personal account for free services)
+- Set Environment Variables on Vercel - like MONGO_URL, PUBLIC_DIR
+- Put a vercel config file - `vercel.json` in your project root directory.
+- After every change, commit your changes - and push code on github.
+- You have to provide permission for github directory to vercel. It will pickup `vercel.json` and `package.json` and deploy your code accordingly.
+- Check video for more details.
+
+### [[Assignments]]
+
+- **Assignment 1** : Deploy your own application or API only to a live server like `Vercel`
+- **Assignment 2 [Challenge]** : Deploy your own application or API only to a live server `Railway.app`
+
+### Related Links/Videos
+
+1. [Heroku Deployment Video](https://www.youtube.com/watch?v=GeXA_MzMR6I)
+2. [Git Crash Course](https://youtu.be/kviiFelh28g)
