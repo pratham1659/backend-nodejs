@@ -1,0 +1,4 @@
+[2025-01-12T18:06:19.547Z] WARN: No books found
+[2025-01-12T18:06:26.202Z] INFO: GET /books - Book created successfully
+[2025-01-12T18:06:29.443Z] INFO: GET /books - Books fetched successfully
+[2025-01-12T18:06:55.310Z] INFO: GET /books/678404a2f57a6595c04b419f - Book fetched successfully
