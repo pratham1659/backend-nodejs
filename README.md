@@ -12,8 +12,6 @@
   npm -v
 ```
 
-- Use VS code terminal to run **commands**
-- **Node REPL** interface can be used directly by typing `node` in **terminal / command prompt** . Use **Ctrl+D** to exit interface. Use **CTRL+C** to exit terminal
 - Running any JavaScript file from node using `node filename.js`
 - **Modules** are basic containers in Node/JavaScript system. 1 file can be one module in Javascript.
 - Two type of Module Systems in node JS are - **CommonJS** module and **ES** Modules.
@@ -58,7 +56,6 @@ npm install nodemon
 "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
   },
 ```
 
