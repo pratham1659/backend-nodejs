@@ -1,24 +1,27 @@
 const express = require("express");
-const cors = require("cors");
+const dotenv = require("dotenv");
 const dbConnect = require("./config/dbConfig");
-const bookRouter = require("./routes/book");
-const server = express();
-const logger = require("./middlewares/logger");
-require("dotenv").config();
+const cookieParser = require("cookie-parser");
+const logMiddleware = require("./middlewares/logger");
+const authRoutes = require("./routes/authRoutes");
 
-//db connect
-dbConnect().catch((err) => {
-  logger.error("Unexpected error occurred in the main function:", err.message || err);
-  process.exit(1); // Exit the process with a failure code
-});
+//environment variable config
+dotenv.config();
 
-// bodyParser - middleware
-server.use(cors());
-server.use(express.json());
-// server.use(express.static("temp")); //path middleware to get the files
-server.use("/books", bookRouter.routes);
+const app = express();
+const PORT = process.env.PORT || 8000;
+
+//middleware
+app.use(logMiddleware); // Use the logger middleware globally
+app.use(express.json()); // to parse the req.body
+app.use(express.urlencoded({ extended: true })); // to parse the form data
+app.use(cookieParser());
+
+//routes
+app.use("/api/auth", authRoutes);
 
 // Server
-server.listen(8080, () => {
-  console.log("Server Started");
+app.listen(PORT, () => {
+  console.log(`Server is running in the port ${PORT}`);
+  dbConnect();
 });
