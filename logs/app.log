@@ -1,33 +1,3 @@
-[2025-01-12T18:06:19.547Z] WARN: No books found
-[2025-01-12T18:06:26.202Z] INFO: GET /books - Book created successfully
-[2025-01-12T18:06:29.443Z] INFO: GET /books - Books fetched successfully
-[2025-01-12T18:06:55.310Z] INFO: GET /books/678404a2f57a6595c04b419f - Book fetched successfully
-[2025-01-13 01:56:56] INFO: POST /api/auth/login 200 -  - 121.531 ms
-[2025-01-13 01:57:06] INFO: POST /api/auth/login 200 -  - 107.573 ms
-[2025-01-13 01:57:17] INFO: POST /api/auth/logout 200 -  - 1.210 ms
-[2025-01-13 02:01:16] INFO: POST /api/auth/login 200 -  - 126.904 ms
-[2025-01-13 02:01:36] INFO: POST /api/auth/login 200 -  - 120.501 ms
-[2025-01-13 02:01:43] INFO: POST /api/auth/logout 200 -  - 0.934 ms
-[2025-01-13 02:02:18] INFO: POST /api/auth/login 400 -  - 128.143 ms
-2025-01-13 02:36:49 POST /login 200 0 ms
-2025-01-13 02:36:58 POST /login 400 0 ms
-2025-01-13 02:39:54 POST /login 200 0 ms
-2025-01-13 02:40:46 POST /login 200 0 ms
-[ 2025-01-13 02:41:56 ] INFO: POST http://localhost:8080/api/auth/login 200 0 ms
-[ 2025-01-13 02:43:03 ] INFO: POST /api/auth/login 200 0 ms
-[ 2025-01-13 02:44:24 ] INFO: POST /api/auth/login 200 126 ms
-[ 2025-01-13 02:44:26 ] INFO: POST /api/auth/login 200 99 ms
-[ 2025-01-13 02:44:27 ] INFO: POST /api/auth/login 200 117 ms
-[2025-01-13 02:45:38] INFO: POST /api/auth/login 200 123 ms
-[ 2025-01-13 02:46:49 ] INFO: POST /api/auth/login 200 0 ms
-[ 2025-01-13 02:46:51 ] INFO: POST /api/auth/login 200 0 ms
-[ 2025-01-13 02:48:26 ] INFO: POST /api/auth/login 200 122 ms
-[ 2025-01-13 02:48:27 ] INFO: POST /api/auth/login 200 110 ms
-[ 2025-01-13 02:48:27 ] INFO: POST /api/auth/login 200 128 ms
-[ 2025-01-13 02:48:28 ] INFO: POST /api/auth/login 200 113 ms
-[ 2025-01-13 02:48:28 ] INFO: POST /api/auth/login 200 117 ms
-[ 2025-01-13 02:48:28 ] INFO: POST /api/auth/login 200 104 ms
-[ 2025-01-13 02:48:28 ] INFO: POST /api/auth/login 200 105 ms
 [2025-01-13 02:48:45] INFO: POST /api/auth/login 200 125 ms
 [2025-01-13 02:48:47] INFO: POST /api/auth/logout 200 1 ms
 [2025-01-13 02:48:48] INFO: POST /api/auth/logout 200 1 ms
@@ -80,3 +50,10 @@
 [2025-01-14 16:36:12] INFO: POST /api/auth/login 200 125.000 ms
 [2025-01-14 16:36:21] INFO: POST /api/auth/logout 200 1.000 ms
 [2025-01-14 16:36:28] INFO: POST /api/auth/login 200 115.000 ms
+[2025-01-14 17:31:08] INFO: GET /api/notifications 200 132.000 ms
+[2025-01-14 17:31:24] ERROR: GET /api/users/profile/janesmith456 404 13.000 ms
+[2025-01-14 17:31:35] ERROR: GET /api/users/profile/pratham1659 404 0.000 ms
+[2025-01-14 17:31:56] INFO: POST /api/auth/login 200 120.000 ms
+[2025-01-14 17:32:10] INFO: GET /api/auth/getme 200 72.000 ms
+[2025-01-14 17:32:20] INFO: GET /api/posts/getallpost 200 119.000 ms
+[2025-01-14 17:32:36] INFO: GET /api/posts/likes/677ab49b7e8c8fb905630cc1 200 142.000 ms
