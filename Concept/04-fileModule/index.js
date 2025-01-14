@@ -39,10 +39,10 @@ fs.writeFile(filePathAsync, "Hello Async Node js", (err) => {
   fs.appendFile(filePathAsync, "\nThis is a new line added to the Async file", (err) => {
     if (err) throw new Error(err);
     console.log("New Async file content added");
-  });
 
-  fs.readFile(filePathAsync, "utf-8", (err, updatedData) => {
-    if (err) throw new Error(err);
-    console.log("Async file content Append: ", updatedData);
+    fs.readFile(filePathAsync, "utf-8", (err, updatedData) => {
+      if (err) throw new Error(err);
+      console.log("Async file content Append: ", updatedData);
+    });
   });
 });
