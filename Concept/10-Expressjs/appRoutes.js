@@ -1,4 +1,5 @@
 const express = require("express");
+const { query, validationResult, body, matchedData } = require("express-validator");
 
 const app = express();
 
@@ -40,9 +41,29 @@ app.get("/api", (req, res) => {
   return res.send(mockUsers);
 });
 
-app.get("/api/users", (req, res) => {
-  res.json(mockUsers);
-});
+app.get(
+  "/api/users",
+  [
+    query("filter")
+      .isString() // Ensure `filter` is a string
+      .notEmpty() // Ensure `filter` is not an empty string
+      .withMessage("Must not be empty")
+      .isLength({ min: 3, max: 10 })
+      .withMessage("Must be at least 3-10 characters"),
+  ],
+  (req, res) => {
+    const result = validationResult(req);
+    console.log(result);
+    const {
+      query: { filter, value },
+    } = req;
+
+    if (filter && value) {
+      return response.send(mockUsers.filter((user) => user[filter].includes(value)));
+    }
+    return res.json(mockUsers);
+  }
+);
 
 const resolveIndexByUserId = (req, res, next) => {
   const {
@@ -97,16 +118,35 @@ app.post("/api", (req, res) => {
 });
 
 // post request body
-app.post("/api/users", (req, res) => {
-  console.log(req.body);
-  const { body } = req;
-  const newUser = { id: mockUsers[mockUsers.length - 1].id + 1, ...body };
-  mockUsers.push(newUser);
-  return res.status(201).send({
-    msg: "Updated Successfully",
-    data: newUser,
-  });
-});
+app.post(
+  "/api/users",
+  [
+    body("username")
+      .notEmpty()
+      .withMessage("Username cannot be empty")
+      .isLength({ min: 5, max: 10 })
+      .withMessage("Username must be at least 5 characters with a max of 32 characters")
+      .isString()
+      .withMessage("Username must be string"),
+    body("place").notEmpty(),
+  ],
+  (req, res) => {
+    const result = validationResult(req);
+    console.log(result);
+
+    if (!result.isEmpty()) {
+      return res.status(400).send({ errors: result.array() });
+    }
+
+    const data = matchedData(req);
+    const newUser = { id: mockUsers[mockUsers.length - 1].id + 1, ...data };
+    mockUsers.push(newUser);
+    return res.status(201).send({
+      msg: "Updated Successfully",
+      data: newUser,
+    });
+  }
+);
 
 //put request body
 app.put("/api/users/:id", resolveIndexByUserId, (req, res) => {
