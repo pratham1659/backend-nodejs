@@ -57,3 +57,5 @@
 [2025-01-14 17:32:10] INFO: GET /api/auth/getme 200 72.000 ms
 [2025-01-14 17:32:20] INFO: GET /api/posts/getallpost 200 119.000 ms
 [2025-01-14 17:32:36] INFO: GET /api/posts/likes/677ab49b7e8c8fb905630cc1 200 142.000 ms
+[2025-02-01 14:17:38] INFO: POST /api/auth/login 200 128.000 ms
+[2025-02-01 14:17:47] INFO: POST /api/auth/logout 200 1.000 ms
