@@ -9,4 +9,10 @@ const mockUsers = [
   { id: 8, username: "Sneha", place: "Hyderabad" },
 ];
 
-module.exports = mockUsers;
+const products = [
+  { id: 1, name: "Laptop", price: 1200, category: "Electronics" },
+  { id: 2, name: "Smartphone", price: 800, category: "Electronics" },
+  { id: 3, name: "Table", price: 150, category: "Furniture" },
+];
+
+module.exports = { mockUsers, products };
