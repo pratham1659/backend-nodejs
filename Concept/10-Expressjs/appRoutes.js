@@ -1,5 +1,6 @@
 const express = require("express");
-const { query, validationResult, body, matchedData } = require("express-validator");
+const { query, validationResult, body, matchedData, checkSchema } = require("express-validator");
+const { createUservalidationSchema, getUserValidationSchema } = require("../10-Expressjs/utils/validationSchemas");
 
 const app = express();
 
@@ -27,43 +28,45 @@ const mockUsers = [
   { id: 8, username: "Sneha", place: "Hyderabad" },
 ];
 
-app.get("/api", (req, res) => {
-  console.log(req.query);
-  const {
-    query: { filter, value },
-  } = req;
-
-  // when filter and value are  undefined
-  if (!filter && !value) return res.send(mockUsers);
-
-  if (filter && value) return res.send(mockUsers.filter((user) => user[filter].includes(value)));
-
-  return res.send(mockUsers);
-});
-
 app.get(
-  "/api/users",
+  "/api",
   [
     query("filter")
-      .isString() // Ensure `filter` is a string
       .notEmpty() // Ensure `filter` is not an empty string
       .withMessage("Must not be empty")
+      .isString() // Ensure `filter` is a string
+      .withMessage("Username must be string")
       .isLength({ min: 3, max: 10 })
       .withMessage("Must be at least 3-10 characters"),
   ],
   (req, res) => {
-    const result = validationResult(req);
-    console.log(result);
+    console.log(req.query);
     const {
       query: { filter, value },
     } = req;
 
-    if (filter && value) {
-      return response.send(mockUsers.filter((user) => user[filter].includes(value)));
-    }
-    return res.json(mockUsers);
+    // when filter and value are  undefined
+    if (!filter && !value) return res.send(mockUsers);
+
+    if (filter && value) return res.send(mockUsers.filter((user) => user[filter].includes(value)));
+
+    return res.send(mockUsers);
   }
 );
+
+app.get("/api/users", (req, res) => {
+  const result = validationResult(req);
+  console.log(result);
+
+  const {
+    query: { filter, value },
+  } = req;
+
+  if (filter && value) {
+    return response.send(mockUsers.filter((user) => user[filter].includes(value)));
+  }
+  return res.json(mockUsers);
+});
 
 const resolveIndexByUserId = (req, res, next) => {
   const {
@@ -118,35 +121,22 @@ app.post("/api", (req, res) => {
 });
 
 // post request body
-app.post(
-  "/api/users",
-  [
-    body("username")
-      .notEmpty()
-      .withMessage("Username cannot be empty")
-      .isLength({ min: 5, max: 10 })
-      .withMessage("Username must be at least 5 characters with a max of 32 characters")
-      .isString()
-      .withMessage("Username must be string"),
-    body("place").notEmpty(),
-  ],
-  (req, res) => {
-    const result = validationResult(req);
-    console.log(result);
+app.post("/api/users", checkSchema(createUservalidationSchema), (req, res) => {
+  const result = validationResult(req);
+  console.log(result);
 
-    if (!result.isEmpty()) {
-      return res.status(400).send({ errors: result.array() });
-    }
-
-    const data = matchedData(req);
-    const newUser = { id: mockUsers[mockUsers.length - 1].id + 1, ...data };
-    mockUsers.push(newUser);
-    return res.status(201).send({
-      msg: "Updated Successfully",
-      data: newUser,
-    });
+  if (!result.isEmpty()) {
+    return res.status(400).send({ errors: result.array() });
   }
-);
+
+  const data = matchedData(req);
+  const newUser = { id: mockUsers[mockUsers.length - 1].id + 1, ...data };
+  mockUsers.push(newUser);
+  return res.status(201).send({
+    msg: "Create User Successfully",
+    data: newUser,
+  });
+});
 
 //put request body
 app.put("/api/users/:id", resolveIndexByUserId, (req, res) => {
