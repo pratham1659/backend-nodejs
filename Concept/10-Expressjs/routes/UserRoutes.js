@@ -2,6 +2,7 @@ const Router = require("express");
 const { query, validationResult, matchedData, checkSchema } = require("express-validator");
 const { createUservalidationSchema, getUserValidationSchema } = require("../utils/validationSchemas");
 const mockUsers = require("../utils/constants");
+const session = require("express-session");
 const router = Router();
 
 const resolveIndexByUserId = (req, res, next) => {
@@ -40,6 +41,15 @@ router.get(
   ],
   (req, res) => {
     console.log(req.query);
+    console.log(req.session);
+    console.log("SessionID:", req.session.id);
+    req.sessionStore.get(req.session.id, (err, sessionData) => {
+      if (err) {
+        console.log(err);
+        throw err;
+      }
+      console.log(sessionData);
+    });
     const {
       query: { filter, value },
     } = req;
