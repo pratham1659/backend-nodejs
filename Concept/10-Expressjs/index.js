@@ -5,6 +5,7 @@ const authRoutes = require("./routes/authRoutes");
 const loggingMiddleware = require("./middleware");
 const cookieParser = require("cookie-parser");
 const session = require("express-session");
+const passport = require("passport");
 
 const app = express();
 
@@ -22,6 +23,10 @@ app.use(
     },
   })
 );
+
+app.use(passport.initialize());
+app.use(passport.session());
+
 app.use(loggingMiddleware);
 app.use(userRoutes);
 app.use(productRoutes);
@@ -33,6 +38,10 @@ app.get("/get-cookie", (req, res) => {
   console.log("SessionID:", req.session.id);
   req.session.visited = true;
   res.send("Cookie has been set!");
+});
+
+app.post("/api/auth", passport.authenticate("local"), (req, res) => {
+  res.send("User authenticated successfully");
 });
 
 const port = 3000;
