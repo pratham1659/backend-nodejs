@@ -2,7 +2,7 @@ const Router = require("express");
 const router = Router();
 const { mockUsers } = require("../utils/constants");
 const session = require("express-session");
-const passport = require("../strategies/local-strategies");
+const passport = require("../utils/authPassport");
 
 router.post("/api/auth", (req, res) => {
   const {

@@ -6,8 +6,13 @@ const loggingMiddleware = require("./middleware");
 const cookieParser = require("cookie-parser");
 const session = require("express-session");
 const passport = require("passport");
+const dotenv = require("dotenv");
+const dbConnect = require("./config/dbConfig");
 
 const app = express();
+
+//environment variable config
+dotenv.config();
 
 app.set("view engine", "ejs");
 
@@ -47,4 +52,5 @@ app.post("/api/auth", passport.authenticate("local"), (req, res) => {
 const port = 3000;
 app.listen(port, () => {
   console.log(`Server is now running at port ${port}`);
+  dbConnect();
 });

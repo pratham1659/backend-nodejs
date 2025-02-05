@@ -1,6 +1,6 @@
 const passport = require("passport");
 const { Strategy } = require("passport-local");
-const { mockUsers } = require("../utils/constants");
+const { mockUsers } = require("./constants");
 
 passport.serializeUser((user, done) => {
   console.log(`Inside Serialize user`);
