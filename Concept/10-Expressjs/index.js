@@ -7,7 +7,9 @@ const cookieParser = require("cookie-parser");
 const session = require("express-session");
 const passport = require("passport");
 const dotenv = require("dotenv");
+const MongoStore = require("connect-mongo");
 const dbConnect = require("./config/dbConfig");
+const { default: mongoose } = require("mongoose");
 
 const app = express();
 
@@ -21,11 +23,15 @@ app.use(cookieParser("authKey"));
 app.use(
   session({
     secret: "demo authKey",
-    saveUninitialized: false,
+    saveUninitialized: true,
     resave: false,
     cookie: {
       maxAge: 60000 * 60,
     },
+    store: MongoStore.create({
+      mongoUrl: process.env.MONGO_URL, // ✅ Use mongoUrl instead of client
+      collectionName: "sessions", // Optional: Specify session collection name
+    }),
   })
 );
 

@@ -50,6 +50,7 @@ router.get(
         console.log(err);
         throw err;
       }
+      console.log("Inside Session Store Get");
       console.log(sessionData);
     });
     const {
