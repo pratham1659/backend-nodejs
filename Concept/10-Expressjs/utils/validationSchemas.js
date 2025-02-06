@@ -25,14 +25,28 @@ const createUservalidationSchema = {
     },
     isLength: {
       options: {
-        min: 3,
+        min: 5,
         max: 32,
       },
       errorMessage: "Username must be at least 5 characters with a max of 32 characters",
     },
   },
   place: {
-    notEmpty: true,
+    notEmpty: {
+      errorMessage: "Place cannot be empty",
+    },
+  },
+  password: {
+    notEmpty: {
+      errorMessage: "Password cannot be empty",
+    },
+    isLength: {
+      options: {
+        min: 5,
+        max: 32,
+      },
+      errorMessage: "Password must be at least 5 characters with a max of 32 characters",
+    },
   },
 };
 

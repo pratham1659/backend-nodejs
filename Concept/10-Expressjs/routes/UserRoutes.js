@@ -3,6 +3,7 @@ const { query, validationResult, matchedData, checkSchema } = require("express-v
 const { createUservalidationSchema, getUserValidationSchema } = require("../utils/validationSchemas");
 const mockUsers = require("../utils/constants");
 const session = require("express-session");
+const User = require("../schemas/userSchema");
 const router = Router();
 
 const resolveIndexByUserId = (req, res, next) => {
@@ -81,19 +82,30 @@ router.get("/api/users/:id", (req, res) => {
   return res.send(getUsers);
 });
 
-router.post("/api/users", checkSchema(createUservalidationSchema), (req, res) => {
+router.post("/api/users", checkSchema(createUservalidationSchema), async (req, res) => {
   const result = validationResult(req);
   if (!result.isEmpty()) {
     return res.status(400).send({ errors: result.array() });
   }
 
+  const { body } = req;
+  const newUser = new User(body);
   const data = matchedData(req);
-  const newUser = { id: mockUsers[mockUsers.length - 1].id + 1, ...data };
-  mockUsers.push(newUser);
-  return res.status(201).send({
-    msg: "Create User Successfully",
-    data: newUser,
-  });
+  console.log(data);
+  try {
+    const savedUser = await newUser.save();
+    return res.status(201).send(savedUser);
+  } catch (err) {
+    console.log(err);
+    return res.sendStatus(400);
+  }
+
+  // const newUser = { id: mockUsers[mockUsers.length - 1].id + 1, ...data };
+  // mockUsers.push(newUser);
+  // return res.status(201).send({
+  //   msg: "Create User Successfully",
+  //   data: newUser,
+  // });
 });
 
 router.put("/api/users/:id", resolveIndexByUserId, (req, res) => {
