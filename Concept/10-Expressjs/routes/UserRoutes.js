@@ -4,6 +4,7 @@ const { createUservalidationSchema, getUserValidationSchema } = require("../util
 const mockUsers = require("../utils/constants");
 const session = require("express-session");
 const User = require("../schemas/userSchema");
+const { hashPassword } = require("../utils/helper");
 const router = Router();
 
 const resolveIndexByUserId = (req, res, next) => {
@@ -88,10 +89,10 @@ router.post("/api/users", checkSchema(createUservalidationSchema), async (req, r
     return res.status(400).send({ errors: result.array() });
   }
 
-  const { body } = req;
-  const newUser = new User(body);
   const data = matchedData(req);
+  data.password = hashPassword(data.password);
   console.log(data);
+  const newUser = new User(data);
   try {
     const savedUser = await newUser.save();
     return res.status(201).send(savedUser);
