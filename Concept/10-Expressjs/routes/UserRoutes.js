@@ -5,6 +5,7 @@ const mockUsers = require("../utils/constants");
 const session = require("express-session");
 const User = require("../schemas/userSchema");
 const { hashPassword } = require("../utils/helper");
+const getuserByIdHandler = require("../handlers/getUserById");
 const router = Router();
 
 const resolveIndexByUserId = (req, res, next) => {
@@ -65,24 +66,7 @@ router.get(
   }
 );
 
-router.get("/api/users/:id", (req, res) => {
-  console.log("req.params", req.params);
-  const parsedId = parseInt(req.params.id);
-  if (isNaN(parsedId))
-    return res.status(400).send({
-      msg: "Bad Request. ID must be a valid number.",
-    });
-
-  const getUsers = mockUsers.find((user) => user.id === parsedId);
-
-  if (!getUsers) {
-    return res.status(404).send({
-      msg: "User not found.",
-    });
-  }
-
-  return res.send(getUsers);
-});
+router.get("/api/users/:id", resolveIndexByUserId, getuserByIdHandler);
 
 router.post("/api/users", checkSchema(createUservalidationSchema), async (req, res) => {
   const result = validationResult(req);
