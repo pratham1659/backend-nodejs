@@ -2,10 +2,7 @@ const Router = require("express");
 const { query, validationResult, matchedData, checkSchema } = require("express-validator");
 const { createUservalidationSchema, getUserValidationSchema } = require("../utils/validationSchemas");
 const mockUsers = require("../utils/constants");
-const session = require("express-session");
-const User = require("../schemas/userSchema");
-const { hashPassword } = require("../utils/helper");
-const getuserByIdHandler = require("../handlers/getUserById");
+const { getUserByIdHandler, createUserHandler } = require("../handlers/userhandler");
 const router = Router();
 
 const resolveIndexByUserId = (req, res, next) => {
@@ -66,33 +63,9 @@ router.get(
   }
 );
 
-router.get("/api/users/:id", resolveIndexByUserId, getuserByIdHandler);
+router.get("/api/users/:id", resolveIndexByUserId, getUserByIdHandler);
 
-router.post("/api/users", checkSchema(createUservalidationSchema), async (req, res) => {
-  const result = validationResult(req);
-  if (!result.isEmpty()) {
-    return res.status(400).send({ errors: result.array() });
-  }
-
-  const data = matchedData(req);
-  data.password = hashPassword(data.password);
-  console.log(data);
-  const newUser = new User(data);
-  try {
-    const savedUser = await newUser.save();
-    return res.status(201).send(savedUser);
-  } catch (err) {
-    console.log(err);
-    return res.sendStatus(400);
-  }
-
-  // const newUser = { id: mockUsers[mockUsers.length - 1].id + 1, ...data };
-  // mockUsers.push(newUser);
-  // return res.status(201).send({
-  //   msg: "Create User Successfully",
-  //   data: newUser,
-  // });
-});
+router.post("/api/users", checkSchema(createUservalidationSchema), createUserHandler, async (req, res) => {});
 
 router.put("/api/users/:id", resolveIndexByUserId, (req, res) => {
   console.log(req.body);
