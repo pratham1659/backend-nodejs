@@ -26,7 +26,6 @@ const logger = morgan(
 
     // Format log message
     return [
-      `[${tokens["customDate"](req, res)}]`, // Date in desired format
       logLevel, // Log level (INFO/ERROR)
       tokens.method(req, res), // HTTP method (GET, POST, etc.)
       tokens["pathOnly"](req, res), // Request path
