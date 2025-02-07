@@ -1,62 +1,13 @@
-const express = require("express");
-const userRoutes = require("./routes/UserRoutes");
-const productRoutes = require("./routes/ProductRoutes");
-const authRoutes = require("./routes/authRoutes");
-const loggingMiddleware = require("./middleware");
-const cookieParser = require("cookie-parser");
-const session = require("express-session");
-const passport = require("passport");
+const { dbConnect } = require("./config/dbConfig");
 const dotenv = require("dotenv");
-const MongoStore = require("connect-mongo");
-const dbConnect = require("./config/dbConfig");
-const { default: mongoose } = require("mongoose");
+const createApp = require("./createApp");
 
-const app = express();
-
-//environment variable config
 dotenv.config();
 
-app.set("view engine", "ejs");
+const app = createApp();
 
-app.use(express.json());
-app.use(cookieParser("authKey"));
-app.use(
-  session({
-    secret: "demo authKey",
-    saveUninitialized: true,
-    resave: false,
-    cookie: {
-      maxAge: 60000 * 60,
-    },
-    store: MongoStore.create({
-      mongoUrl: process.env.MONGO_URL, // ✅ Use mongoUrl instead of client
-      collectionName: "sessions", // Optional: Specify session collection name
-    }),
-  })
-);
-
-app.use(passport.initialize());
-app.use(passport.session());
-
-app.use(loggingMiddleware);
-app.use(userRoutes);
-app.use(productRoutes);
-app.use(authRoutes);
-
-app.get("/get-cookie", (req, res) => {
-  res.cookie("key", "JohnDoe", { maxAge: 60000, signed: true });
-  console.log(req.session);
-  console.log("SessionID:", req.session.id);
-  req.session.visited = true;
-  res.send("Cookie has been set!");
-});
-
-app.post("/api/auth", passport.authenticate("local"), (req, res) => {
-  res.send("User authenticated successfully");
-});
-
-const port = 3000;
-app.listen(port, () => {
-  console.log(`Server is now running at port ${port}`);
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`✅ Server is running on port ${PORT}`);
   dbConnect();
 });

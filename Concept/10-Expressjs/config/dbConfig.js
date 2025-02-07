@@ -12,4 +12,14 @@ async function dbConnect() {
     });
 }
 
-module.exports = dbConnect;
+async function dbDisconnect() {
+  try {
+    await mongoose.connection.dropDatabase();
+    await mongoose.connection.close();
+    console.log("🔴 Disconnected from Database");
+  } catch (err) {
+    console.error("❌ Database Disconnection Error:", err);
+  }
+}
+
+module.exports = { dbConnect, dbDisconnect };

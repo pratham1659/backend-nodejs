@@ -65,7 +65,7 @@ router.get(
 
 router.get("/api/users/:id", resolveIndexByUserId, getUserByIdHandler);
 
-router.post("/api/users", checkSchema(createUservalidationSchema), createUserHandler, async (req, res) => {});
+router.post("/api/users", checkSchema(createUservalidationSchema), createUserHandler);
 
 router.put("/api/users/:id", resolveIndexByUserId, (req, res) => {
   console.log(req.body);
